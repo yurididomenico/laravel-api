@@ -1930,6 +1930,16 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     //Futuri componenti per questa view
     WorkInProgress: _components_WorkInProgress_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  mounted: function mounted() {
+    $this.getPosts();
+  },
+  methods: {
+    getPosts: function getPosts() {
+      axios.get('https://localhost:8000/api/posts').then(function (res) {
+        console.log(res);
+      });
+    }
   }
 });
 
@@ -1975,9 +1985,13 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_c("WorkInProgress")], 1);
+  return _c("div", [_c("WorkInProgress"), _vm._v(" "), _vm._m(0)], 1);
 };
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", [_c("ul", [_c("li")])]);
+}];
 render._withStripped = true;
 
 
