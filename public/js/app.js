@@ -1932,12 +1932,12 @@ __webpack_require__.r(__webpack_exports__);
     WorkInProgress: _components_WorkInProgress_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   mounted: function mounted() {
-    $this.getPosts();
+    this.getPosts();
   },
   methods: {
     getPosts: function getPosts() {
-      axios.get('https://localhost:8000/api/posts').then(function (res) {
-        console.log(res);
+      axios.get('http://localhost:8000/api/posts').then(function (res) {
+        console.log(res.data);
       });
     }
   }
@@ -1990,7 +1990,7 @@ var render = function render() {
 var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_c("ul", [_c("li")])]);
+  return _c("div", [_c("ul", [_c("li", [_vm._v("a")])])]);
 }];
 render._withStripped = true;
 

@@ -21,5 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Route::get('/posts', 'Api\PostController@index');
 
 Route::namespace('Api')->prefix('/posts')->group(function(){
-    Route::get('PostController@index');
+    Route::get('/', 'PostController@index');
 });

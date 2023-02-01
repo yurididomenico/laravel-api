@@ -5,7 +5,7 @@
         <!-- Dati Posts -->
         <div>
             <ul>
-                <li></li>
+                <li>a</li>
             </ul>
         </div>
     </div>
@@ -23,16 +23,13 @@ export default
     },
     mounted()
     {
-        $this.getPosts();
+        this.getPosts();
     },
-    methods:
-    {
-        getPosts()
-        {
-            axios.get('https://localhost:8000/api/posts')
-                .then(res =>
-                {
-                    console.log(res);
+    methods: {
+        getPosts() {
+            axios.get('http://localhost:8000/api/posts')
+                .then((res) => {
+                    console.log(res.data);
                 });
         }
     }
