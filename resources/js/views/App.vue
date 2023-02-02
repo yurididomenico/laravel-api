@@ -5,7 +5,7 @@
         <!-- Dati Posts -->
         <div>
             <ul>
-                <li>a</li>
+                <li v-for="elem in posts" :key="elem.id">{{ elem.title }}</li>
             </ul>
         </div>
     </div>

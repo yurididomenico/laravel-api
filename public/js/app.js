@@ -1992,13 +1992,13 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_c("WorkInProgress"), _vm._v(" "), _vm._m(0)], 1);
+  return _c("div", [_c("WorkInProgress"), _vm._v(" "), _c("div", [_c("ul", _vm._l(_vm.posts, function (elem) {
+    return _c("li", {
+      key: elem.id
+    }, [_vm._v(_vm._s(elem.title))]);
+  }), 0)])], 1);
 };
-var staticRenderFns = [function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("div", [_c("ul", [_c("li", [_vm._v("a")])])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 
