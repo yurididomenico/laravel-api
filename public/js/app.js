@@ -2037,7 +2037,7 @@ var render = function render() {
     return _c("li", {
       key: elem.id
     }, [_vm._v(_vm._s(elem.title))]);
-  }), 0)]), _vm._v(" "), _c("router-view")], 1);
+  }), 0)]), _vm._v(" "), _c("Header"), _vm._v(" "), _c("router-view")], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;
