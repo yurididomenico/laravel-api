@@ -18,6 +18,7 @@ import App from './views/App';
 //Inizializziamo istanza Vue
 const app = new Vue({
     el: '#root',
+    router,
     render: h => h(App),
 
 });
