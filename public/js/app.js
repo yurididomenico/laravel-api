@@ -1934,10 +1934,17 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.getPosts();
   },
+  data: function data() {
+    return {
+      posts: []
+    };
+  },
   methods: {
     getPosts: function getPosts() {
+      var _this = this;
       axios.get('http://localhost:8000/api/posts').then(function (res) {
         console.log(res.data);
+        _this.posts = res.data;
       });
     }
   }

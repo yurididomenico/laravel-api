@@ -25,11 +25,19 @@ export default
     {
         this.getPosts();
     },
+    data()
+    {
+        return {
+            posts: []
+        }
+    }
+    ,
     methods: {
         getPosts() {
             axios.get('http://localhost:8000/api/posts')
                 .then((res) => {
                     console.log(res.data);
+                    this.posts = res.data;
                 });
         }
     }
