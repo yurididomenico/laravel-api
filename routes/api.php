@@ -22,4 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::namespace('Api')->prefix('/posts')->group(function(){
     Route::get('/', 'PostController@index');
+    //router vue
+
+
 });

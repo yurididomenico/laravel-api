@@ -9,6 +9,9 @@ require('./bootstrap');
 //Chiamo Vue
 window.Vue = require('vue');
 
+//Importa router
+import router from './routes.js';
+
 //Importa ciò che trova con il nome App in views
 import App from './views/App';
 
