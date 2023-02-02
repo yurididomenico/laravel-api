@@ -8,6 +8,8 @@
                 <li v-for="elem in posts" :key="elem.id">{{ elem.title }}</li>
             </ul>
         </div>
+
+        <router-view></router-view>
     </div>
 </template>
 
@@ -16,8 +18,7 @@ import WorkInProgress from "../components/WorkInProgress.vue"
 export default
 {
     name: "App",
-    components:
-    {
+    components: {
         //Futuri componenti per questa view
         WorkInProgress
     },
