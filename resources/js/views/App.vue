@@ -3,11 +3,7 @@
         <WorkInProgress />
 
         <!-- Dati Posts -->
-        <div>
-            <ul>
-                <li v-for="elem in posts" :key="elem.id">{{ elem.title }}</li>
-            </ul>
-        </div>
+        <PostsList :posts="posts" :isLoading="isLoading" />
 
         <!-- Header -->
         <Header />
@@ -18,12 +14,14 @@
 
 <script>
 import WorkInProgress from "../components/WorkInProgress.vue"
+import PostsList from "../components/posts/PostsList.vue"
 export default
 {
     name: "App",
     components: {
         //Futuri componenti per questa view
-        WorkInProgress
+        WorkInProgress,
+        PostsList
     },
     mounted()
     {
@@ -32,17 +30,27 @@ export default
     data()
     {
         return {
-            posts: []
+            posts: [],
+            isLoading: false
         }
-    }
-    ,
+    },
     methods: {
         getPosts() {
+            this.isLoading = true
             axios.get('http://localhost:8000/api/posts')
-                .then((res) => {
+                .then((res) =>
+                {
                     console.log(res.data);
                     this.posts = res.data;
-                });
+                })
+                .catch(err =>
+                {
+                    console.log(err)
+                })
+                .then(() =>
+                {
+                    this.isLoading = false
+                })
         }
     }
 }
