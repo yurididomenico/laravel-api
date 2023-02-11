@@ -1,57 +1,23 @@
 <template>
     <div>
-        <WorkInProgress />
-
-        <!-- Dati Posts -->
-        <PostsList :posts="posts" :isLoading="isLoading" />
-
-        <!-- Header -->
+        <!-- Heaedr navigazione -->
         <Header />
-
         <router-view></router-view>
     </div>
 </template>
 
 <script>
-import WorkInProgress from "../components/WorkInProgress.vue"
-import PostsList from "../components/posts/PostsList.vue"
+import Header from '../components/Header.vue'
 export default
 {
     name: "App",
     components: {
-        //Futuri componenti per questa view
-        WorkInProgress,
-        PostsList
-    },
-    mounted()
-    {
-        this.getPosts();
+        Header
     },
     data()
     {
-        return {
-            posts: [],
-            isLoading: false
-        }
+        return {}
     },
-    methods: {
-        getPosts() {
-            this.isLoading = true
-            axios.get('http://localhost:8000/api/posts')
-                .then((res) =>
-                {
-                    console.log(res.data);
-                    this.posts = res.data;
-                })
-                .catch(err =>
-                {
-                    console.log(err)
-                })
-                .then(() =>
-                {
-                    this.isLoading = false
-                })
-        }
-    }
+    methods: {}
 }
 </script>

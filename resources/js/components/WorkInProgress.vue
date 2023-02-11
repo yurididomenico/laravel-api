@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div>
         <h1>Work in progress da componente</h1>
     </div>
@@ -9,4 +9,4 @@ export default
 {
     name: 'WorkInProgress'
 }
-</script>
+</script> -->
